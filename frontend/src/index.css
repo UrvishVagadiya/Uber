@@ -1,1 +1,27 @@
 @import "tailwindcss";
+
+/* Contain Leaflet's internal z-index (200-600+) within map container
+   so it doesn't overlap UI panels like forms, popups, etc. */
+.leaflet-container {
+  isolation: isolate;
+  z-index: 0 !important;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.responsive-panel {
+  max-height: 95vh;
+  overflow-y: auto;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  box-shadow: 0 -10px 25px -5px rgba(0, 0, 0, 0.1), 0 -8px 10px -6px rgba(0, 0, 0, 0.1);
+}
